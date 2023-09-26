@@ -37,6 +37,7 @@ def handle_client(client_socket):
                     client_socket.send('Верно!\n'.encode())
                 else:
                     client_socket.send('Сожалею, ты не успел. Попробуй заново!\n'.encode())
+                    break
             else:
                 client_socket.send('Неправильно! Попробуй заново!\n'.encode())
                 break
