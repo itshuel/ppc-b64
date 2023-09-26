@@ -46,7 +46,6 @@ def handle_client(client_socket):
 
 while True:
     client_socket, client_address = server_socket.accept()
-    print(f"Принято соединение от {client_address[0]}:{client_address[1]}")
     active_clients.append(client_socket)
     client_handler = threading.Thread(target=handle_client, args=(client_socket,))
     client_handler.start()
