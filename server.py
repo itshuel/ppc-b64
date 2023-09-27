@@ -5,6 +5,7 @@ import base64
 import string
 import time
 
+flag = 'kvvuctf{fake_flag}'
 
 def generate_random_string(length=16):
     characters = string.ascii_letters + string.digits
@@ -41,6 +42,7 @@ def handle_client(client_socket):
             else:
                 client_socket.send('Неправильно! Попробуй заново!\n'.encode())
                 break
+        client_socket.send('Отлично, спасибо!\nВот твой флаг: {}'.format(flag))
     finally:
         client_socket.close()
         active_clients.remove(client_socket)
